@@ -1,0 +1,38 @@
+body {
+    background-color: grey;
+    margin: 0;
+}
+
+#navBarDIV {
+    position: fixed;
+    width: 100vw;
+    height: 16vh;
+    background-color: black;
+    /* visibility: hidden; */
+    z-index: 20;
+}
+
+#smallFace {
+    position: absolute;
+    height: 14vh;
+    top: 1vw;
+    right: 1vw;
+}
+
+#bigFaceContainer {
+    position: fixed;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    top: 16vh;
+    background-color: black;
+    text-align: center;
+    z-index: 15;
+} 
+
+#bigFace {
+    position: absolute;
+    left: 10vw;
+    width: 80vw;
+}
+
