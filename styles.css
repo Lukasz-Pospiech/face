@@ -3,36 +3,70 @@ body {
     margin: 0;
 }
 
-#navBarDIV {
+/* #navBarDIV {
     position: fixed;
     width: 100vw;
-    height: 16vh;
-    background-color: black;
-    /* visibility: hidden; */
+    height: 12vh;
+    background-color: black; */
+    /* visibility: hidden;  */
+    /* visibility: visible; 
+    z-index: 20;
+    color: whitesmoke;
+} */
+
+/* #smallFace {
+    position: absolute;
+    height: 10vh;
+    top: 1vw;
+    right: 1vw;
+    visibility: visible; 
+} */
+
+#smallFace {
+    position: fixed;
+    height: 10vh;
+    top: 1vw;
+    right: 1vw;
     z-index: 20;
 }
 
-#smallFace {
-    position: absolute;
-    height: 14vh;
-    top: 1vw;
-    right: 1vw;
-}
-
-#bigFaceContainer {
+#facesContainer {
     position: fixed;
-    display: none;
     width: 100vw;
     height: 100vh;
-    top: 16vh;
     background-color: black;
     text-align: center;
     z-index: 15;
+    visibility: hidden; 
+    overflow: clip;
+    opacity: 0;
+    transition: opacity 0.3s;
 } 
 
 #bigFace {
     position: absolute;
-    left: 10vw;
-    width: 80vw;
+    top: -100vh;
+    left: 2vw;
+    width: 96vw;
+    visibility: visible; 
+    opacity: 1;
 }
 
+.bigFaceAnimation {
+    animation-name: bigFaceFallsDown;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bigFaceFallsDown {
+    0% {
+        top: -100vh;
+        left: 2vw;
+    }
+    100% {
+        top: 12vh;
+        left: 2vw;
+    }
+} 
