@@ -1,28 +1,21 @@
-// function openMouth() {
-//     const bigFaceContainer = document.getElementById("bigFaceContainer");
-
-//     if (bigFaceContainer.style.display === "none") {
-//         bigFaceContainer.style.display = "block";
-//     }
-//     else if (bigFaceContainer.style.display === "block") {
-//         bigFaceContainer.style.display = "none";
-//     }
-// }
-
-
-function openMouth() {
-    const bigFaceContainer = document.getElementById("bigFaceContainer");
-    const bigFaceContainerDisplay = window.getComputedStyle(bigFaceContainer).display;
+function dropBigFace() {
+    const container = document.getElementById("facesContainer");
+    const containerOpacity = window.getComputedStyle(container).opacity;
     const bigFace = document.getElementById("bigFace");
 
-    if (bigFaceContainerDisplay === "none") {
-        bigFaceContainer.style.display = "block";
-        // bigFaceContainer.innerHTML = '<img id="bigFace" src="face.gif" alt="face">';
-        bigFace.style.display = "inline-block";
+    if (containerOpacity === "0") {
+        container.style.visibility = "visible";
+        container.style.opacity = 1;
+        bigFace.className = "bigFaceAnimation";
     }
     else {
-        bigFaceContainer.style.display = "none";
-        resetGIF("bigFace");
+        container.style.opacity = "0";
+        setTimeout(reset, 600);
+        function reset() {
+            container.style.visibility = "hidden";
+            bigFace.className = "";
+            resetGIF("bigFace");
+        }
     }
 
     function resetGIF(id) {
@@ -32,4 +25,6 @@ function openMouth() {
         gif.src = imageURL;
     }
 }
+
+
 
